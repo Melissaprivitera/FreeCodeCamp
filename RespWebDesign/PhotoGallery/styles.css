@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box; /*Calculates the size with the padding and the border included*/
+  }
+  
+  body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f7;
+  }
+  
+  .header {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /*doesnt shrink the image if the window shrinks */
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    gap: 16px; /*sets the gaps between rows and columns in multi-column layouts (flex and grid), it has row-gap and column-gap sub properties*/
+  }
+
+  .gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover; /*crops the image to the required size without distorting the image*/
+    border-radius: 10px;
+  }
+ 
+  /* the ::after pseudo element creates a last child element with the properties that we need.  we can use it to add an empty space at the end.*/
+  .gallery::after {
+    content:"";
+    width: 350px;
+  }
+  
